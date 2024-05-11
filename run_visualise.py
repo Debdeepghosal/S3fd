@@ -55,6 +55,13 @@ for tidx, track in enumerate(tracks):
 
 # ==================== ADD DETECTIONS TO VIDEO ====================
 
+savepath = os.path.join(opt.work_dir,opt.reference,'faces_my.pckl')
+
+with open(savepath, 'wb') as fil:
+  pickle.dump(faces, fil)
+
+
+
 first_image = cv2.imread(flist[0])
 
 fw = first_image.shape[1]
